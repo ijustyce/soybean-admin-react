@@ -3,11 +3,11 @@ import { blue, lightGreen } from 'kolorist';
 
 import { version } from '../package.json';
 
-import { cleanup, genChangelog, generateRoute, gitCommit, gitCommitVerify, release, updatePkg } from './commands';
+import { cleanup, genChangelog, generateRoute, release, updatePkg } from './commands';
 import { loadCliOptions } from './config';
 import type { Lang } from './locales';
 
-type Command = 'changelog' | 'cleanup' | 'gen-route' | 'git-commit' | 'git-commit-verify' | 'release' | 'update-pkg';
+type Command = 'changelog' | 'cleanup' | 'gen-route' | 'release' | 'update-pkg';
 
 type CommandAction<A extends object> = (args?: A) => Promise<void> | void;
 
@@ -74,18 +74,6 @@ export async function setupCli() {
         await generateRoute();
       },
       desc: 'generate route'
-    },
-    'git-commit': {
-      action: async args => {
-        await gitCommit(args?.lang);
-      },
-      desc: 'git commit, generate commit message which match Conventional Commits standard'
-    },
-    'git-commit-verify': {
-      action: async () => {
-        await gitCommitVerify();
-      },
-      desc: 'verify git commit message, make sure it match Conventional Commits standard'
     },
     release: {
       action: async args => {

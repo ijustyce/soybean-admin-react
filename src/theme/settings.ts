@@ -25,7 +25,7 @@ export const themeSettings: App.Theme.ThemeSetting = {
   },
   otherColor: {
     error: '#f5222d',
-    info: '#2080f0',
+    info: '#1E90FF',
     success: '#52c41a',
     warning: '#faad14'
   },
@@ -44,11 +44,12 @@ export const themeSettings: App.Theme.ThemeSetting = {
   },
   tab: {
     cache: true,
-    height: 44,
+    height: 32,
     mode: 'chrome',
     visible: true
   },
-  themeColor: '#646cff',
+  themeColor: '#1E90FF',
+  // themeColor: '#646cff',
   themeScheme: 'light',
   tokens: {
     dark: {
